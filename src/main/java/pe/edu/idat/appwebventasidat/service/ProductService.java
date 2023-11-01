@@ -23,27 +23,27 @@ public class ProductService {
         String mensaje="Producto registrado correctamente";
         Boolean respuesta=true;
         try{
-            Product product=new Product();
-            if(product.getProductid()>0){
+            Product product = new Product();
+            if(productRequest.getProductid()>0){
                 product.setProductid(productRequest.getProductid());
             }
             product.setProductname(productRequest.getProductname());
             product.setUnitprice(productRequest.getUnitprice());
-            Boolean discontinued=false;
-            if(productRequest.getDiscontinued()!=null){
-                discontinued=true;
+            Boolean discontinued = false;
+            if(productRequest.getDiscontinued() != null){
+                discontinued = true;
             }
             product.setDiscontinued(discontinued);
-            Category category=new Category();
+            Category category = new Category();
             category.setCategoryid(productRequest.getCategoryid());
-            Supplier supplier=new Supplier();
+            Supplier supplier = new Supplier();
             supplier.setSupplierid(productRequest.getSupplierid());
             product.setCategory(category);
             product.setSupplier(supplier);
             productRepository.save(product);
         }catch (Exception ex){
             mensaje="Producto no registrado";
-            respuesta=false;
+            respuesta = false;
         }
         return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();
     }

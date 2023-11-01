@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Entity
 @Data
+@Entity
 @Table(name = "products")
 public class Product {
     @Id
@@ -26,7 +26,6 @@ public class Product {
     private Integer reorderlevel;
     @Column(name = "discontinued")
     private Boolean discontinued;
-
     @ManyToOne
     @JoinColumn(name = "supplierid")
     private Supplier supplier;
