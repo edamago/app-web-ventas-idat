@@ -28,7 +28,7 @@ public class ProductService {
                 product.setProductid(productRequest.getProductid());
             }
             product.setProductname(productRequest.getProductname());
-            product.setUniteprice(productRequest.getUnitprice());
+            product.setUnitprice(productRequest.getUnitprice());
             Boolean discontinued=false;
             if(productRequest.getDiscontinued()!=null){
                 discontinued=true;

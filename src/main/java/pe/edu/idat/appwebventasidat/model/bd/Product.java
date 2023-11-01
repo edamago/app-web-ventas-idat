@@ -16,10 +16,10 @@ public class Product {
     private String productname;
     @Column(name = "quantityperunit")
     private String quantityperunit;
-    @Column(name = "uniteprice")
-    private Double uniteprice;
+    @Column(name = "unitprice")
+    private Double unitprice;
     @Column(name = "unitsinstock")
-    private Double unitsinstock;
+    private Integer unitsinstock;
     @Column(name = "unitsonorder")
     private Integer unitsonorder;
     @Column(name = "reorderlevel")

@@ -13,13 +13,13 @@ import java.util.List;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("/backoffice/products")
+@RequestMapping("/backoffice/product")
 public class ProductController {
     private ProductService productService;
 
     @GetMapping("")
     public String frmMantProducto(Model model){
-        model.addAttribute("listarproductos",productService.listarProductos());
+        model.addAttribute("listaproductos",productService.listarProductos());
         return "backoffice/product/frmproduct";
     }
 
